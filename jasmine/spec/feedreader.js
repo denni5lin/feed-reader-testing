@@ -57,10 +57,12 @@ $(function() {
             });
         });
         /* Ensures there is at least a single .entry
-         * element within the .feed container.
+         * element within the .feed container. Also 
+         * making sure the length of the .entry element
+         * is not empty.
          */
         it('there is at least one single entry', function() {
-            expect($('.entry .feed')).toBeDefined();
+            expect($('.feed').find('.entry').length > 0).toBe(true);
         });
     });
 
@@ -72,11 +74,11 @@ $(function() {
         beforeEach(function(done) {
             $('.feed').empty();
             loadFeed(0, function() {
-                start = $('.feed').find(allFeeds.url);
+                start = $('.feed').html(); // Compare the actual content
                 done();
             });
             loadFeed(1, function() {
-                end = $('.feed').find(allFeeds.url);
+                end = $('.feed').html(); 
                 done();
             });
         });
