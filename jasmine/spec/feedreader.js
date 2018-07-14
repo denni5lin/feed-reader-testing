@@ -75,7 +75,6 @@ $(function() {
             $('.feed').empty();
             loadFeed(0, function() {
                 start = $('.feed').html(); // Compare the actual content
-                done();
             });
             loadFeed(1, function() {
                 end = $('.feed').html(); 
