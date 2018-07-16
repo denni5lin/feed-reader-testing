@@ -52,9 +52,7 @@ $(function() {
          * completes its work.
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
         /* Ensures there is at least a single .entry
          * element within the .feed container. Also 
